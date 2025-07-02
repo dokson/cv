@@ -1,0 +1,11 @@
+# Cover personal cover letters for Privacy
+cover-*
+
+# MiKTeX auxillary files
+*.aux
+*.log
+*.fls
+*.fdb_latexmk
+*.out
+*.synctex(busy)
+*.synctex.gz
