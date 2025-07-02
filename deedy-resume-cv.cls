@@ -15,6 +15,12 @@
 \usepackage{fancyhdr}
 \usepackage{fontawesome5}
 \usepackage[super]{nth}
+\usepackage{silence}
+
+% Suppress font Warnings
+\WarningFilter{latexfont}{Font shape}
+\WarningFilter{latexfont}{Some font shapes were not available}
+\WarningFilter{hyperref}{Token not allowed in a PDF string}
 
 % Color definitions
 \usepackage[dvipsnames]{xcolor} 
