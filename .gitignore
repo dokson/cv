@@ -9,3 +9,6 @@ cover-*
 *.out
 *.synctex(busy)
 *.synctex.gz
+
+# PDF output files
+*.pdf
