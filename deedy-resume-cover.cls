@@ -1,5 +1,5 @@
 % Intro Options
-\ProvidesClass{deedy-resume-cover}[2014/04/30 resume class]
+\ProvidesClass{deedy-resume-cover}
 \NeedsTeXFormat{LaTeX2e}
 \DeclareOption{print}{\def\@cv@print{}}
 \DeclareOption*{%
@@ -64,7 +64,7 @@
 \newcommand{\sectionsep}{\vspace{8pt}}
 
 \newcommand{\runsubsection}[1]{
-\color{subheadings}\fontspec[Path = fonts/lato/]{Lato-Bol}\fontsize{12pt}{12pt}\selectfont\bfseries\uppercase {#1} \normalfont}
+\color{subheadings}\fontspec[Path = fonts/lato/]{Lato-Bol.ttf}\fontsize{12pt}{12pt}\selectfont\bfseries\uppercase {#1} \normalfont}
 
 % Bullet Lists with fewer gaps command
 \newenvironment{tightemize}{
@@ -72,11 +72,11 @@
 {\end{itemize}\vspace{-\topsep}}
 
 % Cover Letter
-\newcommand{\companyname}[1]{\raggedright\fontspec[Path = fonts/lato/]{Lato-Bol}\fontsize{12pt}{14pt}\selectfont {#1 \\}\mbox{}\\\mbox{}\\ \normalfont}
+\newcommand{\companyname}[1]{\raggedright\fontspec[Path = fonts/lato/]{Lato-Bol.ttf}\fontsize{12pt}{14pt}\selectfont {#1 \\}\mbox{}\\\mbox{}\\ \normalfont}
 
-\newcommand{\currentdate}[1]{\raggedleft\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{13pt}\selectfont {#1 \\} \normalfont}
+\newcommand{\currentdate}[1]{\raggedleft\fontspec[Path = fonts/raleway/]{Raleway-Medium.otf}\fontsize{11pt}{13pt}\selectfont {#1 \\} \normalfont}
 
 % Letter content command
-\newcommand{\lettercontent}[1]{\raggedright\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{13pt}\selectfont {#1 \\}\mbox{}\\ \normalfont}
+\newcommand{\lettercontent}[1]{\raggedright\fontspec[Path = fonts/raleway/]{Raleway-Medium.otf}\fontsize{11pt}{13pt}\selectfont {#1 \\}\mbox{}\\ \normalfont}
 
-\newcommand{\closing}[1]{\raggedright\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{13pt}\selectfont {#1 \\}\vspace{0.5cm} \normalfont}
+\newcommand{\closing}[1]{\raggedright\fontspec[Path = fonts/raleway/]{Raleway-Medium.otf}\fontsize{11pt}{13pt}\selectfont {#1 \\}\vspace{0.5cm} \normalfont}
