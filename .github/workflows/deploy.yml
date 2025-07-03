@@ -25,6 +25,7 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         repository: 'dokson/cv'
         tag: ${{ steps.cv_release.outputs.release }}
+        out-file-path: './cv-download'
         fileName: 'cv.pdf'
 
     - name: Checkout interactive-resume repository
@@ -32,17 +33,18 @@ jobs:
       with:
         repository: dokson/interactive-resume
         token: ${{ secrets.API_TOKEN_GITHUB }}
+        path: './interactive-resume'
 
     - name: Copy updated cv.pdf to interactive-resume
       run: |
-        cp -f cv.pdf ./document/cv.pdf
+        cp -f ./cv-downloads/cv.pdf ./interactive-resume-repo/document/cv.pdf
 
-    - name: Commit and push changes github-pages repository
+    - name: Commit and push changes to dokson/interactive-resume repository
       uses: cpina/github-action-push-to-another-repository@v1.7.2
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
-        source-directory: 'github-pages'
+        source-directory: 'interactive-resume-repo'
         destination-github-username: 'dokson'
         destination-repository-name: 'interactive-resume'
         user-email: ale.colace@gmail.com
