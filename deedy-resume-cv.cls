@@ -26,6 +26,8 @@
         ModDate={D:20250701000000Z}       % YYYYMMDDHHmmSS
     }
 }
+\pdfcompresslevel=0
+\pdfobjcompresslevel=0
 
 % Suppress font Warnings
 \WarningFilter{latexfont}{Font shape}

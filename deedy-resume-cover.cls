@@ -18,6 +18,18 @@
 \usepackage{fontspec}
 \usepackage{fancyhdr}
 \usepackage{fontawesome6}
+\usepackage{hyperref}
+\hypersetup{
+    pdfinfo={
+        Title={Alessandro Colace's Resume},
+        Author={Alessandro Colace},
+        Subject={CV},
+        CreationDate={D:20250701000000Z}, % YYYYMMDDHHmmSS
+        ModDate={D:20250701000000Z}       % YYYYMMDDHHmmSS
+    }
+}
+\pdfcompresslevel=0
+\pdfobjcompresslevel=0
 
 % Publications
 \usepackage{cite}
