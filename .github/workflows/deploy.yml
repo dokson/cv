@@ -48,5 +48,5 @@ jobs:
         destination-github-username: 'dokson'
         destination-repository-name: 'interactive-resume'
         user-email: ale.colace@gmail.com
-        target-branch: master
+        target-branch: main
         commit-message: 'Updates from cv release ${{ steps.cv_release.outputs.release }}'
