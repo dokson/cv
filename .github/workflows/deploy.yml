@@ -44,7 +44,7 @@ jobs:
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
-        source-directory: 'interactive-resume-repo'
+        source-directory: 'interactive-resume'
         destination-github-username: 'dokson'
         destination-repository-name: 'interactive-resume'
         user-email: ale.colace@gmail.com
