@@ -6,26 +6,14 @@
             "args": [
                 "-interaction=nonstopmode",
                 "-file-line-error",
+                "--output-format=pdf",
+                "--shell-escape",
                 "%DOCFILE%"
-            ]
-        },
-        {
-            "name": "pdflatex",
-            "command": "pdflatex",
-            "args": [
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "%DOCFILE%"
-            ]
-        },
-        {
-            "name": "xelatex",
-            "command": "xelatex",
-            "args": [
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "%DOCFILE%"
-            ]
+            ],
+            "env": {
+                "SOURCE_DATE_EPOCH": "1656633600",
+                "FORCE_SOURCE_DATE": "1"
+            }
         }
     ],
     "latex-workshop.latex.recipes": [
@@ -34,19 +22,7 @@
             "tools": [
                 "lualatex"
             ]
-        },
-        {
-            "name": "pdflatex",
-            "tools": [
-                "pdflatex"
-            ]
-        },
-        {
-            "name": "xelatex",
-            "tools": [
-                "xelatex"
-            ]
-        },
+        }
     ],
     "latex-workshop.latex.recipe.default": "lualatex",
     "latex-workshop.latex.clean.fileTypes": [
@@ -72,5 +48,19 @@
         "*.nav",
         "%DOC%.synctex.gz"
     ],
-    "latex-workshop.latex.autoClean.run": "onBuilt"
+    "latex-workshop.latex.autoClean.run": "onBuilt",
+    "cSpell.words": [
+        "ChiefGokhlayeh",
+        "cpina",
+        "dokson",
+        "finnp",
+        "latexmk",
+        "lualatex",
+        "pozetroninc",
+        "releasenumber",
+        "releaseurl",
+        "robinraju",
+        "softprops",
+        "textidote"
+    ]
 }
