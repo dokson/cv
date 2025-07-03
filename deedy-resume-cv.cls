@@ -7,9 +7,13 @@
 }
 \ProcessOptions\relax
 \LoadClass{article}
+\directlua{
+    pdf.setomitcidset(1)
+    pdf.setomitcharset(1)
+    pdf.setsuppressoptionalinfo(511)
+}
 
 % Package Imports
-\usepackage{pdfx}
 \usepackage[hmargin=1.25cm, vmargin=0.75cm]{geometry}
 \usepackage[hidelinks]{hyperref}
 \usepackage{bookmark}
