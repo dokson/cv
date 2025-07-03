@@ -75,7 +75,7 @@ jobs:
         prerelease: false
         generate_release_notes: true
         files: |
-          cv-${{ needs.version.outputs.version }}.pdf
+          cv.pdf
 
     - name: Echo release info
       run: echo "::debug::Created release with url=${{ steps.create_release.outputs.url }}; id=${{ steps.create_release.outputs.id }}; upload_url=${{ steps.create_release.outputs.upload_url }}"
