@@ -3,9 +3,8 @@ name: Build (LuaLaTeX)
 on:
     workflow_dispatch:
     push:
-        branches: [ master ]
-    pull_request:
-        branches: [ master ]
+        branches:
+          - main
 
 jobs:
     build_latex:
