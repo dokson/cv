@@ -11,6 +11,13 @@
     pdf.setomitcidset(1)
     pdf.setomitcharset(1)
     pdf.setsuppressoptionalinfo(511)
+    pdf.setinfo{
+        Title = "Alessandro Colace's Cover Letter",
+        Author = "Alessandro Colace",
+        Subject = "Cover Letter",
+        CreationDate = "D:20250701000000Z",
+        ModDate = "D:20250701000000Z"
+    }
 }
 
 % Package Imports
