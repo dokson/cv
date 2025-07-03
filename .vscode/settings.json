@@ -48,19 +48,5 @@
         "*.nav",
         "%DOC%.synctex.gz"
     ],
-    "latex-workshop.latex.autoClean.run": "onBuilt",
-    "cSpell.words": [
-        "ChiefGokhlayeh",
-        "cpina",
-        "dokson",
-        "finnp",
-        "latexmk",
-        "lualatex",
-        "pozetroninc",
-        "releasenumber",
-        "releaseurl",
-        "robinraju",
-        "softprops",
-        "textidote"
-    ]
+    "latex-workshop.latex.autoClean.run": "onBuilt"
 }
