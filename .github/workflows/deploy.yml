@@ -14,35 +14,28 @@ jobs:
       id: cv_release
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        repository: "dokson/cv"
+        repository: 'dokson/cv'
 
     - name: Echo release tag name
       run: echo "::debug::Found tag for LATEST release >> ${{ steps.cv_release.outputs.release }}"
 
     - name: Download cv.pdf from release
-      uses: robinraju/release-downloader@v1.11
+      uses: robinraju/release-downloader@v1.12
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        repository: "dokson/cv"
+        repository: 'dokson/cv'
         tag: ${{ steps.cv_release.outputs.release }}
-        out-file-path: "cv"
         fileName: 'cv.pdf'
 
-    - name: Checkout github-pages repository
+    - name: Checkout interactive-resume repository
       uses: actions/checkout@v4
       with:
-        repository: dokson/dokson.github.io
+        repository: dokson/interactive-resume
         token: ${{ secrets.API_TOKEN_GITHUB }}
-        path: ./github-pages
 
-    - name: Copy pdf files to github-pages
+    - name: Copy updated cv.pdf to interactive-resume
       run: |
-        mkdir -p ./github-pages/document/
-        rm -f ./github-pages/document/*
-        for file in cv/*.pdf; do
-          echo "Copying $file"
-          cp -R "$file" ./github-pages/document/
-        done
+        cp -f cv.pdf ./document/cv.pdf
 
     - name: Commit and push changes github-pages repository
       uses: cpina/github-action-push-to-another-repository@v1.7.2
@@ -51,7 +44,7 @@ jobs:
       with:
         source-directory: 'github-pages'
         destination-github-username: 'dokson'
-        destination-repository-name: 'dokson.github.io'
+        destination-repository-name: 'interactive-resume'
         user-email: ale.colace@gmail.com
         target-branch: master
-        commit-message: "Updates from cv release ${{ steps.cv_release.outputs.release }}"
+        commit-message: 'Updates from cv release ${{ steps.cv_release.outputs.release }}'
