@@ -16,6 +16,16 @@
 \usepackage{fontawesome6}
 \usepackage[super]{nth}
 \usepackage{silence}
+\usepackage{hyperref}
+\hypersetup{
+    pdfinfo={
+        Title={Alessandro Colace's Resume},
+        Author={Alessandro Colace},
+        Subject={CV},
+        CreationDate={D:20250701000000Z}, % YYYYMMDDHHmmSS
+        ModDate={D:20250701000000Z}       % YYYYMMDDHHmmSS
+    }
+}
 
 % Suppress font Warnings
 \WarningFilter{latexfont}{Font shape}
