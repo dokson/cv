@@ -59,7 +59,7 @@ Auxiliary files (`.aux`, `.log`, `.synctex.gz`, etc.) are automatically cleaned 
 
 - **[Deedy-Resume](https://github.com/deedy/Deedy-Resume)** - Original template by Debarghya Das
 - **[Deedy-Resume-Reversed](https://github.com/ZDTaylor/Deedy-Resume-Reversed)** - Enhanced version by Zachary Taylor
-- **[FontAwesome](https://fontawesome.com/)** - Icons used in the header section
+- **[FontAwesome6 LaTeX Package](https://github.com/braniii/fontawesome)** - Icons used in the header section
 
 ## 📄 License
 

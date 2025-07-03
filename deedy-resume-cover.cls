@@ -17,7 +17,7 @@
 \usepackage[absolute]{textpos}
 \usepackage{fontspec}
 \usepackage{fancyhdr}
-\usepackage{fontawesome5}
+\usepackage{fontawesome6}
 
 % Publications
 \usepackage{cite}
@@ -34,12 +34,6 @@
 \usepackage{fontspec}
 \setmainfont[Color=primary, Path = fonts/lato/,BoldItalicFont=Lato-BolIta.ttf,BoldFont=Lato-Bol.ttf,ItalicFont=Lato-RegIta.ttf]{Lato-Reg.ttf}
 \setsansfont[Scale=MatchLowercase, Ligatures=TeX, Path = fonts/raleway/]{Raleway-ExtraLight.otf}
-
-% FontAwesome 6
-\newfontfamily{\FA}[Path = fonts/fontawesome/]{Font Awesome 6 Free-Regular-400.otf}
-\newcommand{\faC}{{\FA \char"43}}
-\newcommand{\faFaceSmile}{{\FA \char"F118}}
-\newcommand{\faCircleUser}{{\FA \char"F2BD}}
 
 % Name Section
 \newcommand{\namesection}[3]{
