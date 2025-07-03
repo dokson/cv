@@ -8,6 +8,24 @@
                 "-file-line-error",
                 "%DOCFILE%"
             ]
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOCFILE%"
+            ]
         }
     ],
     "latex-workshop.latex.recipes": [
@@ -16,7 +34,19 @@
             "tools": [
                 "lualatex"
             ]
-        }
+        },
+        {
+            "name": "pdflatex",
+            "tools": [
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "xelatex",
+            "tools": [
+                "xelatex"
+            ]
+        },
     ],
     "latex-workshop.latex.recipe.default": "lualatex",
     "latex-workshop.latex.clean.fileTypes": [

@@ -6,9 +6,9 @@ My CV, built with LuaLaTeX.
 
 ### Prerequisites (Windows)
 
-- **VS Code**: With LaTeX Workshop extension
-- **MiKTeX**: LaTeX distribution
-- **Perl**: Required for compilation
+- [**VS Code**](https://code.visualstudio.com/download): With LaTeX Workshop extension
+- [**MiKTeX**](https://miktex.org/download): LaTeX distribution
+- [**Perl**](https://strawberryperl.com/): Required for compilation
 
 ### Compilation
 
