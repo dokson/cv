@@ -1,0 +1,55 @@
+name: Build (LuaLaTeX)
+
+on:
+    workflow_dispatch:
+    push:
+        branches: [ master ]
+    pull_request:
+        branches: [ master ]
+
+jobs:
+    build_latex:
+        name: Build and log errors
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout code
+            uses: actions/checkout@v4
+
+          - name: Echo cv-build.tex
+            run: echo "::debug::Writing '\def\releasenumber{ga-build}\input{cv}' to cv-build.tex"
+
+          - name: Create cv-build.tex
+            uses: finnp/create-file-action@2.0.0
+            env:
+                FILE_NAME: "cv-build.tex"
+                FILE_DATA: '\def\releasenumber{ga-build}\input{cv}'
+
+          - name: Lint LaTeX document
+            uses: ChiefGokhlayeh/textidote-action@v5.3.1
+            id: lint
+            with:
+                root_file: cv-build.tex
+
+          - name: Upload TeXtidote report
+            uses: actions/upload-artifact@v4
+            with:
+                name: textidote_report
+                path: report.html
+
+          - name: Compile LaTeX document
+            uses: xu-cheng/latex-action@v3
+            with:
+                root_file: cv-build.tex
+                latexmk_use_lualatex: true
+
+          - name: Upload pdf
+            uses: actions/upload-artifact@v4
+            with:
+                path: cv-build.pdf
+                if-no-files-found: error
+
+          - name: Upload logs
+            if: failure()
+            uses: actions/upload-artifact@v4
+            with:
+                path: cv-build.log
