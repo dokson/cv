@@ -37,7 +37,7 @@ jobs:
 
     - name: Copy updated cv.pdf to interactive-resume
       run: |
-        cp -f ./cv-download/cv.pdf ./interactive-resume-repo/document/cv.pdf
+        cp -f ./cv-download/cv.pdf ./interactive-resume/document/cv.pdf
 
     - name: Commit and push changes to dokson/interactive-resume repository
       uses: cpina/github-action-push-to-another-repository@v1.7.2
