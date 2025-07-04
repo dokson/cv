@@ -13,39 +13,24 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Create build files for cv.tex and cover.tex
-      run: |
-        echo "::debug::Writing '\def\releasenumber{ga-build}\input{cv}' to cv-build.tex"
-        echo '\def\releasenumber{ga-build}\input{cv}' > cv-build.tex
-        echo "::debug::Writing '\def\releasenumber{ga-build}\input{cover}' to cover-build.tex"
-        echo '\def\releasenumber{ga-build}\input{cover}' > cover-build.tex
-
-    - name: Upload TeXtidote reports
-      uses: actions/upload-artifact@v4
-      with:
-        name: textidote_reports
-        path: |
-          cv-report.html
-          cover-report.html
-
     - name: Compile CV LaTeX document
       uses: xu-cheng/latex-action@v3
       with:
-        root_file: cv-build.tex
+        root_file: cv.tex
         latexmk_use_lualatex: true
 
     - name: Compile Cover Letter LaTeX document
       uses: xu-cheng/latex-action@v3
       with:
-        root_file: cover-build.tex
+        root_file: cover.tex
         latexmk_use_lualatex: true
 
     - name: Upload PDFs
       uses: actions/upload-artifact@v4
       with:
         path: |
-          cv-build.pdf
-          cover-build.pdf
+          cv.pdf
+          cover.pdf
         if-no-files-found: error
 
     - name: Upload logs
@@ -53,5 +38,5 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         path: |
-          cv-build.log
-          cover-build.log
+          cv.log
+          cover.log

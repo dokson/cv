@@ -20,7 +20,7 @@ jobs:
     - name: Checkout cv repository
       uses: actions/checkout@v4
 
-    - name: Compile LaTeX document
+    - name: Compile CV LaTeX document
       uses: xu-cheng/latex-action@v3
       with:
         root_file: cv.tex
