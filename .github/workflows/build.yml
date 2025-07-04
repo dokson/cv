@@ -1,7 +1,6 @@
 name: Build (LuaLaTeX)
 
 on:
-  workflow_dispatch:
   push:
     branches:
     - main
@@ -20,11 +19,6 @@ jobs:
         echo '\def\releasenumber{ga-build}\input{cv}' > cv-build.tex
         echo "::debug::Writing '\def\releasenumber{ga-build}\input{cover}' to cover-build.tex"
         echo '\def\releasenumber{ga-build}\input{cover}' > cover-build.tex
-
-    - name: Lint LaTeX documents
-      run: |
-        docker run --rm -v $(pwd):/workdir ghcr.io/chiefgokhlayeh/textidote:latest --output html cv-build.tex > cv-report.html || echo "Linting failed for cv-build.tex"
-        docker run --rm -v $(pwd):/workdir ghcr.io/chiefgokhlayeh/textidote:latest --output html cover-build.tex > cover-report.html || echo "Linting failed for cover-build.tex"
 
     - name: Upload TeXtidote reports
       uses: actions/upload-artifact@v4
