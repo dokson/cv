@@ -1,6 +1,6 @@
-# CV - LaTeX Resume
+# My CV - built with LuaLaTeX
 
-My CV, built with LuaLaTeX.
+![repo size](https://img.shields.io/github/repo-size/dokson/cv) ![license](https://img.shields.io/github/license/dokson/cv) ![last commit](https://img.shields.io/github/last-commit/dokson/cv)
 
 ## 🚀 Quick Start
 
@@ -51,9 +51,16 @@ The project includes VS Code configuration for:
 
 ### File Cleanup
 
-Auxiliary files (`.aux`, `.log`, `.synctex.gz`, etc.) are automatically cleaned after compilation. Manual cleanup can be triggered with:
+Auxiliary files (`.aux`, `.log`, `.synctex.gz`, etc.) are automatically cleaned after compilation.
+
+Manual cleanup can be triggered with:
 
 - VS Code: `Ctrl+Shift+P` → "LaTeX Workshop: Clean up auxiliary files"
+
+### GitHub Actions
+
+- [![Build (Lualatex)](https://github.com/dokson/cv/actions/workflows/build.yml/badge.svg)](https://github.com/dokson/cv/actions/workflows/build.yml): Continuous Build the **cv.tex** LaTeX file with LuaLaTeX
+- [![Deploy cv.pdf to interactive-resume repository](https://github.com/dokson/cv/actions/workflows/deploy.yml/badge.svg)](https://github.com/dokson/cv/actions/workflows/deploy.yml): Triggers when there is a new release version and copies the latest cv.pdf to dokson.github.io interactive-resume website
 
 ## 🙏 Acknowledgments
 
@@ -65,6 +72,6 @@ Auxiliary files (`.aux`, `.log`, `.synctex.gz`, etc.) are automatically cleaned 
 
 This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
 
-- Original Work Copyright 2014 Debarghya Das
-- Modified Work Copyright 2018 Zachary Taylor  
-- Further Modified Work Copyright 2025 Alessandro Colace
+- Original Deedy-Resume template Work - Copyright 2014 - Debarghya Das
+- Modified template Work - Copyright 2018 - Zachary Taylor  
+- Further modified Work - Copyright 2025 - Alessandro Colace

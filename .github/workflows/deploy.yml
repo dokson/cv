@@ -1,52 +1,60 @@
-name: Publish PDF release to website
+name: Deploy cv.pdf to interactive-resume repository
 
 on:
-  workflow_dispatch:
-  repository_dispatch:
-    types: [ dispatch_publish ]
+  push:
+    tags:
+    - 'v*'
 
 jobs:
-  deploy_web:
+  build-and-deploy:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
     steps:
-    - name: Get the release
-      uses: pozetroninc/github-action-get-latest-release@master
-      id: cv_release
+    - name: Get version from tag
+      id: get_version
+      run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+
+    - name: Checkout cv repository
+      uses: actions/checkout@v4
+
+    - name: Compile LaTeX document
+      uses: xu-cheng/latex-action@v3
+      with:
+        root_file: cv.tex
+        latexmk_use_lualatex: true
+
+    - name: Create GitHub Release
+      uses: softprops/action-gh-release@v2
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        repository: 'dokson/cv'
-
-    - name: Echo release tag name
-      run: echo "::debug::Found tag for LATEST release >> ${{ steps.cv_release.outputs.release }}"
-
-    - name: Download cv.pdf from release
-      uses: robinraju/release-downloader@v1.12
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        repository: 'dokson/cv'
-        tag: ${{ steps.cv_release.outputs.release }}
-        out-file-path: './cv-download'
-        fileName: 'cv.pdf'
+        tag_name: ${{ steps.get_version.outputs.VERSION }}
+        name: Release ${{ steps.get_version.outputs.VERSION }}
+        draft: false
+        prerelease: false
+        generate_release_notes: true
+        files: cv.pdf
 
     - name: Checkout interactive-resume repository
       uses: actions/checkout@v4
       with:
         repository: dokson/interactive-resume
         token: ${{ secrets.API_TOKEN_GITHUB }}
-        path: './interactive-resume'
+        path: interactive-resume
 
-    - name: Copy updated cv.pdf to interactive-resume
-      run: |
-        cp -f ./cv-download/cv.pdf ./interactive-resume/document/cv.pdf
+    - name: Copy cv.pdf to interactive-resume
+      run: cp -f cv.pdf interactive-resume/document/cv.pdf
 
-    - name: Commit and push changes to dokson/interactive-resume repository
+    - name: Commit and push to interactive-resume
       uses: cpina/github-action-push-to-another-repository@v1.7.2
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
-        source-directory: 'interactive-resume'
-        destination-github-username: 'dokson'
-        destination-repository-name: 'interactive-resume'
+        source-directory: interactive-resume
+        destination-github-username: dokson
+        destination-repository-name: interactive-resume
         user-email: ale.colace@gmail.com
         target-branch: main
-        commit-message: 'Updates from cv release ${{ steps.cv_release.outputs.release }}'
+        commit-message: '(auto) feat: Update cv.pdf from dokson/cv latest release ${{ steps.get_version.outputs.VERSION }}'
