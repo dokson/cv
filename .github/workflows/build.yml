@@ -7,36 +7,31 @@ on:
 
 jobs:
   build_latex:
-    name: Build and log errors
+    name: Build LaTeX documents and log errors
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        documents: [ cv, cover ]
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Compile CV LaTeX document
+    - name: Compile ${{ matrix.documents }}.tex LaTeX document
       uses: xu-cheng/latex-action@v3
       with:
-        root_file: cv.tex
-        latexmk_use_lualatex: true
-
-    - name: Compile Cover Letter LaTeX document
-      uses: xu-cheng/latex-action@v3
-      with:
-        root_file: cover.tex
+        root_file: ${{ matrix.documents }}.tex
         latexmk_use_lualatex: true
 
     - name: Upload PDFs
       uses: actions/upload-artifact@v4
       with:
-        path: |
-          cv.pdf
-          cover.pdf
+        path: ${{ matrix.documents }}.pdf
         if-no-files-found: error
 
     - name: Upload logs
       if: failure()
       uses: actions/upload-artifact@v4
       with:
-        path: |
-          cv.log
-          cover.log
+        path: ${{ matrix.documents }}.log
