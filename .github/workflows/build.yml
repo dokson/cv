@@ -27,6 +27,7 @@ jobs:
     - name: Upload PDFs
       uses: actions/upload-artifact@v4
       with:
+        name: ${{ matrix.documents }}.pdf
         path: ${{ matrix.documents }}.pdf
         if-no-files-found: error
 
@@ -34,4 +35,5 @@ jobs:
       if: failure()
       uses: actions/upload-artifact@v4
       with:
+        name: ${{ matrix.documents }}.log
         path: ${{ matrix.documents }}.log
