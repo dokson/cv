@@ -14,41 +14,50 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Echo cv-build.tex
-      run: echo "::debug::Writing '\def\releasenumber{ga-build}\input{cv}' to cv-build.tex"
+    - name: Create build files for cv.tex and cover.tex
+      run: |
+        echo "::debug::Writing '\def\releasenumber{ga-build}\input{cv}' to cv-build.tex"
+        echo '\def\releasenumber{ga-build}\input{cv}' > cv-build.tex
+        echo "::debug::Writing '\def\releasenumber{ga-build}\input{cover}' to cover-build.tex"
+        echo '\def\releasenumber{ga-build}\input{cover}' > cover-build.tex
 
-    - name: Create cv-build.tex
-      uses: finnp/create-file-action@2.0.0
-      env:
-        FILE_NAME: "cv-build.tex"
-        FILE_DATA: '\def\releasenumber{ga-build}\input{cv}'
+    - name: Lint LaTeX documents
+      run: |
+        docker run --rm -v $(pwd):/workdir ghcr.io/chiefgokhlayeh/textidote:latest --output html cv-build.tex > cv-report.html || echo "Linting failed for cv-build.tex"
+        docker run --rm -v $(pwd):/workdir ghcr.io/chiefgokhlayeh/textidote:latest --output html cover-build.tex > cover-report.html || echo "Linting failed for cover-build.tex"
 
-    - name: Lint LaTeX document
-      uses: ChiefGokhlayeh/textidote-action@v5.3.1
-      id: lint
-      with:
-        root_file: cv-build.tex
-
-    - name: Upload TeXtidote report
+    - name: Upload TeXtidote reports
       uses: actions/upload-artifact@v4
       with:
-        name: textidote_report
-        path: report.html
+        name: textidote_reports
+        path: |
+          cv-report.html
+          cover-report.html
 
-    - name: Compile LaTeX document
+    - name: Compile CV LaTeX document
       uses: xu-cheng/latex-action@v3
       with:
         root_file: cv-build.tex
         latexmk_use_lualatex: true
 
-    - name: Upload pdf
+    - name: Compile Cover Letter LaTeX document
+      uses: xu-cheng/latex-action@v3
+      with:
+        root_file: cover-build.tex
+        latexmk_use_lualatex: true
+
+    - name: Upload PDFs
       uses: actions/upload-artifact@v4
       with:
-        path: cv-build.pdf
+        path: |
+          cv-build.pdf
+          cover-build.pdf
         if-no-files-found: error
 
     - name: Upload logs
       if: failure()
       uses: actions/upload-artifact@v4
       with:
-        path: cv-build.log
+        path: |
+          cv-build.log
+          cover-build.log
