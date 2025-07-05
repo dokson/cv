@@ -44,7 +44,7 @@ jobs:
         token: ${{ secrets.API_TOKEN_GITHUB }}
         path: interactive-resume
 
-    - name: Copy cv.pdf to interactive-resume
+    - name: Copy cv.pdf to interactive-resume document folder
       run: cp -f cv.pdf interactive-resume/document/cv.pdf
 
     - name: Commit and push to interactive-resume
@@ -55,6 +55,7 @@ jobs:
         source-directory: interactive-resume
         destination-github-username: dokson
         destination-repository-name: interactive-resume
-        user-email: ale.colace@gmail.com
+        user-name: 'github-actions[bot]'
+        user-email: 'github-actions[bot]@users.noreply.github.com'
         target-branch: main
         commit-message: '(auto) feat: Update cv.pdf from dokson/cv latest release ${{ steps.get_version.outputs.VERSION }}'
