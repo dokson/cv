@@ -29,15 +29,20 @@ lualatex cv.tex
 
 ```plaintext
 cv/
+├── .github/
+│   └── workflows/
+│       ├── build.yml           # GitHub Actions workflow for CI/CD
+│       └── deploy.yml          # GitHub Actions workflow for deployment to website
 ├── .vscode/
+│   ├── extensions.json         # Recommended VS Code extensions
 │   └── settings.json           # VS Code LaTeX configuration
+├── .gitignore                  # Git ignore patterns
 ├── cover.tex                   # Cover letter LaTeX source file
 ├── cv.tex                      # CV LaTeX source file
 ├── deedy-resume-cover.cls      # Cover letter LaTeX class
 ├── deedy-resume-cv.cls         # CV LaTeX class
-├── README.md                   # This file
 ├── LICENSE                     # Apache 2.0 License
-└── .gitignore                  # Git ignore patterns
+└── README.md                   # This file
 ```
 
 ## 🛠️ Development
