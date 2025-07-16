@@ -1,4 +1,4 @@
-# Cover personal cover letters for Privacy
+# Ignore personal cover letters for Privacy
 cover-*
 
 # MiKTeX auxillary files
