@@ -64,7 +64,7 @@
 \usepackage{titlesec}
 \titlespacing{\section}{0pt}{0pt}{0pt} 
 \titlespacing{\subsection}{0pt}{0pt}{0pt}
-\newcommand{\sectionsep}{\vspace{8pt}}
+\newcommand{\sectionsep}{\vspace{6.5pt}}
 
 % Headings command
 \titleformat{\section}{\color{headings}
