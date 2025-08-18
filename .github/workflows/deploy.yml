@@ -18,7 +18,7 @@ jobs:
       run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
 
     - name: Checkout cv repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
 
     - name: Compile CV LaTeX document
       uses: xu-cheng/latex-action@v4
@@ -38,7 +38,7 @@ jobs:
         files: cv.pdf
 
     - name: Checkout interactive-resume repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
       with:
         repository: dokson/interactive-resume
         token: ${{ secrets.API_TOKEN_GITHUB }}

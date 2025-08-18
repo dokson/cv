@@ -16,7 +16,7 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
 
     - name: Compile ${{ matrix.documents }}.tex LaTeX document
       uses: xu-cheng/latex-action@v4
