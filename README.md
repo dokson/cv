@@ -29,20 +29,21 @@ lualatex cv.tex
 
 ```plaintext
 cv/
-├── .github/
-│   └── workflows/
-│       ├── build.yml           # GitHub Actions workflow for CI/CD
-│       └── deploy.yml          # GitHub Actions workflow for deployment to website
-├── .vscode/
-│   ├── extensions.json         # Recommended VS Code extensions
-│   └── settings.json           # VS Code LaTeX configuration
-├── .gitignore                  # Git ignore patterns
-├── cover.tex                   # Cover letter LaTeX source file
-├── cv.tex                      # CV LaTeX source file
-├── deedy-resume-cover.cls      # Cover letter LaTeX class
-├── deedy-resume-cv.cls         # CV LaTeX class
-├── LICENSE                     # Apache 2.0 License
-└── README.md                   # This file
+├── 📁 .github/
+│   └── 📁 workflows/
+│       ├── 🤖 build.yml            # GitHub Actions workflow for CI/CD
+│       └── 🤖 deploy.yml           # GitHub Actions workflow for deployment to website
+├── 📁 .vscode/
+│   ├── ⚙️ extensions.json          # Recommended VS Code extensions
+│   └── ⚙️ settings.json            # VS Code LaTeX configuration
+├── 📁 fonts/                        # Fonts used in LaTeX (e.g., Lato, Raleway)
+├── ⛔ .gitignore                   # Git ignore patterns
+├── 📝 cover.tex                    # Cover letter LaTeX source file
+├── 📝 cv.tex                       # CV LaTeX source file
+├── 📄 deedy-resume-cover.cls       # Cover letter LaTeX class
+├── 📄 deedy-resume-cv.cls          # CV LaTeX class
+├── 📜 LICENSE                      # Apache 2.0 License
+└── 📖 README.md                    # Project documentation (this file)
 ```
 
 ## 🛠️ Development
@@ -73,7 +74,7 @@ Manual cleanup can be triggered with:
 - **[Deedy-Resume-Reversed](https://github.com/ZDTaylor/Deedy-Resume-Reversed)** - Enhanced version by Zachary Taylor
 - **[FontAwesome6 LaTeX Package](https://github.com/braniii/fontawesome)** - Icons used in the header section
 
-## 📄 License
+## 📜 License
 
 This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
 
