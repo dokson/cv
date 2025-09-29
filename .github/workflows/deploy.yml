@@ -48,7 +48,7 @@ jobs:
       run: cp -f cv.pdf interactive-resume/document/cv.pdf
 
     - name: Commit and push to interactive-resume
-      uses: cpina/github-action-push-to-another-repository@v1.7.2
+      uses: cpina/github-action-push-to-another-repository@v1.7.3
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
