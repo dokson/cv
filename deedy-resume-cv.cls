@@ -15,8 +15,8 @@
         Title = "Alessandro Colace's CV",
         Author = "Alessandro Colace",
         Subject = "CV",
-        CreationDate = "D:20250701000000Z",
-        ModDate = "D:20250701000000Z"
+        CreationDate = "D:20251001000000Z",
+        ModDate = "D:20251001000000Z"
     }
 }
 
@@ -57,7 +57,7 @@
 \color{headings}
 \fontspec[Path = fonts/lato/]{Lato-Reg.ttf}\fontsize{11pt}{14pt}\selectfont #3}
 \noindent\makebox[\linewidth]{\color{headings}\rule{\paperwidth}{0.4pt}}
-\vspace{-15pt}
+\vspace{-18pt}
 }
 
 % Section seperators 
