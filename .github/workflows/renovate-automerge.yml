@@ -1,4 +1,4 @@
-name: Dependabot Auto-Merge
+name: Renovate Auto-Merge
 on: pull_request
 
 permissions:
@@ -6,23 +6,15 @@ permissions:
   pull-requests: write
 
 jobs:
-  dependabot:
+  renovate:
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    if: github.actor == 'dependabot[bot]'
+    if: github.actor == 'renovate[bot]'
     steps:
-      - name: Dependabot metadata
-        id: metadata
-        uses: dependabot/fetch-metadata@v2
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Approve and auto-merge PR
         run: |
           gh pr review --approve "$PR_URL"
           gh pr merge --auto --squash "$PR_URL" \
-            --subject "chore(deps): ${{ steps.metadata.outputs.dependency-names }}" \
-            --body "Auto-merged ${{ steps.metadata.outputs.update-type }} update" \
             --delete-branch
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}

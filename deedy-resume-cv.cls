@@ -21,12 +21,19 @@
 }
 
 % Package Imports
+% renovate: datasource=ctan depName=geometry
 \usepackage[hmargin=1.25cm, vmargin=0.75cm]{geometry}
+% renovate: datasource=ctan depName=hyperref
 \usepackage[hidelinks]{hyperref}
+% renovate: datasource=ctan depName=bookmark
 \usepackage{bookmark}
+% renovate: datasource=ctan depName=fancyhdr
 \usepackage{fancyhdr}
+% renovate: datasource=ctan depName=fontawesome6
 \usepackage{fontawesome6}
+% renovate: datasource=ctan depName=nth
 \usepackage[super]{nth}
+% renovate: datasource=ctan depName=silence
 \usepackage{silence}
 
 % Suppress font Warnings
@@ -35,6 +42,7 @@
 \WarningFilter{hyperref}{Token not allowed in a PDF string}
 
 % Color definitions
+% renovate: datasource=ctan depName=xcolor
 \usepackage[dvipsnames]{xcolor} 
 \definecolor{date}{HTML}{666666} 
 \definecolor{primary}{HTML}{2b2b2b}
@@ -42,6 +50,7 @@
 \definecolor{subheadings}{HTML}{333333}
 
 % Set main fonts
+% renovate: datasource=ctan depName=fontspec
 \usepackage{fontspec}
 \setmainfont[Color=primary, Path = fonts/lato/,BoldItalicFont=Lato-BolIta.ttf,BoldFont=Lato-Bol.ttf,ItalicFont=Lato-RegIta.ttf]{Lato-Reg.ttf}
 \setsansfont[Scale=MatchLowercase, Ligatures=TeX, Path = fonts/raleway/]{Raleway-ExtraLight.otf}
@@ -61,6 +70,7 @@
 }
 
 % Section seperators 
+% renovate: datasource=ctan depName=titlesec
 \usepackage{titlesec}
 \titlespacing{\section}{0pt}{0pt}{0pt} 
 \titlespacing{\subsection}{0pt}{0pt}{0pt}
@@ -96,6 +106,7 @@
   {\end{itemize}\vspace{-\topsep}}
 
 % Privacy policy
+% renovate: datasource=ctan depName=textpos
 \usepackage[absolute]{textpos}
 \setlength{\TPHorizModule}{1mm}
 \setlength{\TPVertModule}{1mm}
