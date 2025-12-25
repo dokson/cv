@@ -12,8 +12,28 @@
                 "github-actions"
             ],
             "groupName": "github-actions"
+        },
+        {
+            "matchManagers": [
+                "regex"
+            ],
+            "matchDatasources": [
+                "custom.ctan"
+            ],
+            "groupName": "latex-packages",
+            "commitMessageTopic": "LaTeX package {{depName}}",
+            "commitMessageExtra": "to version {{newVersion}}"
         }
     ],
+    "customDatasources": {
+        "ctan": {
+            "defaultRegistryUrlTemplate": "https://ctan.org/json/2.0/pkg/{{packageName}}",
+            "format": "json",
+            "transformTemplates": [
+                "{\"releases\": $exists(version) ? [{\"version\": version.number ? version.number : version.date}] : []}"
+            ]
+        }
+    },
     "customManagers": [
         {
             "customType": "regex",
@@ -23,10 +43,8 @@
             "matchStrings": [
                 "% renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)\\s+\\\\(?:usepackage|RequirePackage)(?:\\[[^\\]]*\\])?\\{(?<packageName>[^}]+)\\}"
             ],
-            "datasourceTemplate": "repology",
-            "packageNameTemplate": "ctan/{{depName}}",
-            "versioningTemplate": "loose",
-            "currentValueTemplate": "0.0.0"
+            "datasourceTemplate": "custom.ctan",
+            "versioningTemplate": "loose"
         }
     ]
 }

@@ -21,27 +21,27 @@
 }
 
 % Package Imports
-% renovate: datasource=ctan depName=geometry
+% renovate: datasource=custom.ctan depName=geometry
 \usepackage[hmargin=2.54cm, vmargin=2.54cm]{geometry}
-% renovate: datasource=ctan depName=hyperref
+% renovate: datasource=custom.ctan depName=hyperref
 \usepackage[hidelinks]{hyperref}
-% renovate: datasource=ctan depName=xcolor
+% renovate: datasource=custom.ctan depName=xcolor
 \usepackage[dvipsnames]{xcolor}
-% renovate: datasource=ctan depName=bookmark
+% renovate: datasource=custom.ctan depName=bookmark
 \usepackage{bookmark}
-% renovate: datasource=ctan depName=titlesec
+% renovate: datasource=custom.ctan depName=titlesec
 \usepackage{titlesec}
-% renovate: datasource=ctan depName=textpos
+% renovate: datasource=custom.ctan depName=textpos
 \usepackage[absolute]{textpos}
-% renovate: datasource=ctan depName=fontspec
+% renovate: datasource=custom.ctan depName=fontspec
 \usepackage{fontspec}
-% renovate: datasource=ctan depName=fancyhdr
+% renovate: datasource=custom.ctan depName=fancyhdr
 \usepackage{fancyhdr}
-% renovate: datasource=ctan depName=fontawesome6
+% renovate: datasource=custom.ctan depName=fontawesome6
 \usepackage{fontawesome6}
 
 % Publications
-% renovate: datasource=ctan depName=cite
+% renovate: datasource=custom.ctan depName=cite
 \usepackage{cite}
 \renewcommand\refname{\vskip -1.5cm}
 
