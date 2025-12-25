@@ -44,7 +44,8 @@
                 "% renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)\\s+\\\\(?:usepackage|RequirePackage)(?:\\[[^\\]]*\\])?\\{(?<packageName>[^}]+)\\}"
             ],
             "datasourceTemplate": "custom.ctan",
-            "versioningTemplate": "loose"
+            "versioningTemplate": "loose",
+            "currentValueTemplate": "0.0.0"
         }
     ]
 }
