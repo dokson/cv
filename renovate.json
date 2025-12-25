@@ -25,7 +25,8 @@
             ],
             "datasourceTemplate": "repology",
             "depNameTemplate": "ctan/{{depName}}",
-            "versioningTemplate": "loose"
+            "versioningTemplate": "loose",
+            "currentValueTemplate": "0.0.0"
         }
     ]
 }
