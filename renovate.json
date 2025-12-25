@@ -18,16 +18,14 @@
         {
             "customType": "regex",
             "fileMatch": [
-                "(^|/)[^/]*\\.tex$",
-                "(^|/)[^/]*\\.cls$"
+                "\\.cls$"
             ],
             "matchStrings": [
-                "%[ \\t]*renovate:[ \\t]*datasource=(?<datasource>[^\\s]+)[ \\t]+depName=(?<depName>[^\\s]+)(?:[ \\t]+versioning=(?<versioning>[^\\s]+))?[ \\t]*[\\r\\n]+(?:\\\\usepackage|\\\\RequirePackage)(?:\\[.*?\\])?\\{(?<packageName>.*?)\\}(?:[ \\t]*%[ \\t]*(?<currentValue>[^\\r\\n]*))?"
+                "% renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)\\s+\\\\(?:usepackage|RequirePackage)(?:\\[[^\\]]*\\])?\\{(?<packageName>[^}]+)\\}"
             ],
-            "packageNameTemplate": "{{{packageName}}}",
-            "datasourceTemplate": "{{{datasource}}}",
-            "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
-            "currentValueTemplate": "{{#if currentValue}}{{{currentValue}}}{{else}}0.0.0{{/if}}"
+            "datasourceTemplate": "repology",
+            "depNameTemplate": "ctan/{{depName}}",
+            "versioningTemplate": "loose"
         }
     ]
 }
