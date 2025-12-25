@@ -24,7 +24,7 @@
                 "% renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)\\s+\\\\(?:usepackage|RequirePackage)(?:\\[[^\\]]*\\])?\\{(?<packageName>[^}]+)\\}"
             ],
             "datasourceTemplate": "repology",
-            "depNameTemplate": "ctan/{{depName}}",
+            "packageNameTemplate": "ctan/{{depName}}",
             "versioningTemplate": "loose",
             "currentValueTemplate": "0.0.0"
         }
