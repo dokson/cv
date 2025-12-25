@@ -21,19 +21,19 @@
 }
 
 % Package Imports
-% renovate: datasource=custom.ctan depName=geometry
+% renovate: datasource=custom.ctan depName=geometry currentValue=5.9
 \usepackage[hmargin=1.25cm, vmargin=0.75cm]{geometry}
-% renovate: datasource=custom.ctan depName=hyperref
+% renovate: datasource=custom.ctan depName=hyperref currentValue=7.01o
 \usepackage[hidelinks]{hyperref}
-% renovate: datasource=custom.ctan depName=bookmark
+% renovate: datasource=custom.ctan depName=bookmark currentValue=1.31
 \usepackage{bookmark}
-% renovate: datasource=custom.ctan depName=fancyhdr
+% renovate: datasource=custom.ctan depName=fancyhdr currentValue=5.2
 \usepackage{fancyhdr}
-% renovate: datasource=custom.ctan depName=fontawesome6
+% renovate: datasource=custom.ctan depName=fontawesome6 currentValue=6.7.2-3
 \usepackage{fontawesome6}
-% renovate: datasource=custom.ctan depName=nth
+% renovate: datasource=custom.ctan depName=nth currentValue=0.0.0
 \usepackage[super]{nth}
-% renovate: datasource=custom.ctan depName=silence
+% renovate: datasource=custom.ctan depName=silence currentValue=1.5b
 \usepackage{silence}
 
 % Suppress font Warnings
@@ -42,7 +42,7 @@
 \WarningFilter{hyperref}{Token not allowed in a PDF string}
 
 % Color definitions
-% renovate: datasource=custom.ctan depName=xcolor
+% renovate: datasource=custom.ctan depName=xcolor currentValue=3.02
 \usepackage[dvipsnames]{xcolor} 
 \definecolor{date}{HTML}{666666} 
 \definecolor{primary}{HTML}{2b2b2b}
@@ -50,7 +50,7 @@
 \definecolor{subheadings}{HTML}{333333}
 
 % Set main fonts
-% renovate: datasource=custom.ctan depName=fontspec
+% renovate: datasource=custom.ctan depName=fontspec currentValue=2.9g
 \usepackage{fontspec}
 \setmainfont[Color=primary, Path = fonts/lato/,BoldItalicFont=Lato-BolIta.ttf,BoldFont=Lato-Bol.ttf,ItalicFont=Lato-RegIta.ttf]{Lato-Reg.ttf}
 \setsansfont[Scale=MatchLowercase, Ligatures=TeX, Path = fonts/raleway/]{Raleway-ExtraLight.otf}
@@ -70,7 +70,7 @@
 }
 
 % Section seperators 
-% renovate: datasource=custom.ctan depName=titlesec
+% renovate: datasource=custom.ctan depName=titlesec currentValue=2.17
 \usepackage{titlesec}
 \titlespacing{\section}{0pt}{0pt}{0pt} 
 \titlespacing{\subsection}{0pt}{0pt}{0pt}
@@ -106,7 +106,7 @@
   {\end{itemize}\vspace{-\topsep}}
 
 % Privacy policy
-% renovate: datasource=custom.ctan depName=textpos
+% renovate: datasource=custom.ctan depName=textpos currentValue=1.10.1
 \usepackage[absolute]{textpos}
 \setlength{\TPHorizModule}{1mm}
 \setlength{\TPVertModule}{1mm}

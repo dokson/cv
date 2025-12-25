@@ -41,11 +41,10 @@
                 "\\.cls$"
             ],
             "matchStrings": [
-                "% renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)\\s+\\\\(?:usepackage|RequirePackage)(?:\\[[^\\]]*\\])?\\{(?<packageName>[^}]+)\\}"
+                "% renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+) currentValue=(?<currentValue>\\S+)\\s+\\\\(?:usepackage|RequirePackage)(?:\\[[^\\]]*\\])?\\{(?<packageName>[^}]+)\\}"
             ],
             "datasourceTemplate": "custom.ctan",
-            "versioningTemplate": "loose",
-            "currentValueTemplate": "0.0.0"
+            "versioningTemplate": "loose"
         }
     ]
 }

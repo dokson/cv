@@ -21,27 +21,27 @@
 }
 
 % Package Imports
-% renovate: datasource=custom.ctan depName=geometry
+% renovate: datasource=custom.ctan depName=geometry currentValue=5.9
 \usepackage[hmargin=2.54cm, vmargin=2.54cm]{geometry}
-% renovate: datasource=custom.ctan depName=hyperref
+% renovate: datasource=custom.ctan depName=hyperref currentValue=7.01o
 \usepackage[hidelinks]{hyperref}
-% renovate: datasource=custom.ctan depName=xcolor
+% renovate: datasource=custom.ctan depName=xcolor currentValue=3.02
 \usepackage[dvipsnames]{xcolor}
-% renovate: datasource=custom.ctan depName=bookmark
+% renovate: datasource=custom.ctan depName=bookmark currentValue=1.31
 \usepackage{bookmark}
-% renovate: datasource=custom.ctan depName=titlesec
+% renovate: datasource=custom.ctan depName=titlesec currentValue=2.17
 \usepackage{titlesec}
-% renovate: datasource=custom.ctan depName=textpos
+% renovate: datasource=custom.ctan depName=textpos currentValue=1.10.1
 \usepackage[absolute]{textpos}
-% renovate: datasource=custom.ctan depName=fontspec
+% renovate: datasource=custom.ctan depName=fontspec currentValue=2.9g
 \usepackage{fontspec}
-% renovate: datasource=custom.ctan depName=fancyhdr
+% renovate: datasource=custom.ctan depName=fancyhdr currentValue=5.2
 \usepackage{fancyhdr}
-% renovate: datasource=custom.ctan depName=fontawesome6
+% renovate: datasource=custom.ctan depName=fontawesome6 currentValue=6.7.2-3
 \usepackage{fontawesome6}
 
 % Publications
-% renovate: datasource=custom.ctan depName=cite
+% renovate: datasource=custom.ctan depName=cite currentValue=5.5
 \usepackage{cite}
 \renewcommand\refname{\vskip -1.5cm}
 
