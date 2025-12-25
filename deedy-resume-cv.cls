@@ -31,10 +31,9 @@
 \usepackage{fancyhdr}
 % renovate: datasource=custom.ctan depName=fontawesome6 currentValue=6.7.2-3
 \usepackage{fontawesome6}
-% renovate: datasource=custom.ctan depName=nth currentValue=0.0.0
-\usepackage[super]{nth}
 % renovate: datasource=custom.ctan depName=silence currentValue=1.5b
 \usepackage{silence}
+\usepackage[super]{nth}
 
 % Suppress font Warnings
 \WarningFilter{latexfont}{Font shape}
