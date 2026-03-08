@@ -21,7 +21,7 @@
 }
 
 % Package Imports
-% renovate: datasource=custom.ctan depName=geometry currentValue=5.9
+% renovate: datasource=custom.ctan depName=geometry currentValue=6.0
 \usepackage[hmargin=2.54cm, vmargin=2.54cm]{geometry}
 % renovate: datasource=custom.ctan depName=hyperref currentValue=7.01p
 \usepackage[hidelinks]{hyperref}
