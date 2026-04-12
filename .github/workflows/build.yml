@@ -25,7 +25,7 @@ jobs:
         latexmk_use_lualatex: true
 
     - name: Upload PDFs
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: ${{ matrix.documents }}.pdf
         path: ${{ matrix.documents }}.pdf
@@ -33,7 +33,7 @@ jobs:
 
     - name: Upload logs
       if: failure()
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: ${{ matrix.documents }}.log
         path: ${{ matrix.documents }}.log
